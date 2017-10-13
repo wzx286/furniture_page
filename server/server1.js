@@ -1,4 +1,5 @@
 let express = require('express');
+let bodyParser = require('body-parser');
 let app = express();
 
 app.use(express.static(__dirname+'/../src'));

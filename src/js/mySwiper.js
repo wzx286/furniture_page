@@ -79,11 +79,16 @@ function BindSwiperNode(node,option){
 
 	opt.direction.x && (node_wrap.style.width = wrapWidth +"px");
 	opt.direction.y && (node_wrap.style.height = wrapHeight + "px");
-	for( let el of oSlider) {
+	Array.prototype.forEach.call(oSlider,function(el){
 		el.style.width = opt.bounce.x + "px";
-		el.style.height = opt.bounce.y + "px";		
-		// el.style.width = node.offsetWidth + "px";
-	}
+		el.style.height = opt.bounce.y + "px";
+		// el.style.width = node.offsetWidth + "px";		
+	});
+	// for( let el of oSlider) {
+	// 	el.style.width = opt.bounce.x + "px";
+	// 	el.style.height = opt.bounce.y + "px";		
+	// 	// el.style.width = node.offsetWidth + "px";
+	// }
 		
 
 	
@@ -92,11 +97,14 @@ function BindSwiperNode(node,option){
 		if(opt.pagination!=='' && opt.paginationSelectedClassName!==''){//分页区域
 			paginationPoint = node.parentNode.querySelector(opt.pagination).getElementsByClassName('mySwiper-pagination-point');
 			addClass(paginationPoint[_index],opt.paginationSelectedClassName);
-			for( el of paginationPoint) {
+			// for( el of paginationPoint) {
+			Array.prototype.forEach.call(paginationPoint,function(el){
 				el.addEventListener('mouseenter',function() {
 					jumpToThis(paginationPoint,this);
 				}.bind(el));
-			}
+			});
+				
+			// }
 			
 		}
 		if(opt.autoPlay){
