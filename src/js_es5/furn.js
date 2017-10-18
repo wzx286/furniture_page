@@ -13,7 +13,7 @@ window.onload = function () {
 		i !== 0 && (el.style.transform = 'translate3d(' + (picLen + 0.48 * (i - 1)) + 'rem,0rem,0rem)');
 	});
 	var node1 = document.getElementsByClassName('bedroom-item-bg')[0],
-	    node2 = document.getElementsByClassName('study-item-roll')[0];
+		node2 = document.getElementsByClassName('study-item-roll')[0];
 	var bedroll = new BindSwiperNode(node1, {
 		direction: {
 			x: true,
@@ -23,7 +23,7 @@ window.onload = function () {
 		pagination: '.pagination',
 		paginationSelectedClassName: 'pagination-active'
 	}),
-	    studyroll = new BindSwiperNode(node2, {
+	studyroll = new BindSwiperNode(node2, {
 		direction: {
 			x: true,
 			y: false
